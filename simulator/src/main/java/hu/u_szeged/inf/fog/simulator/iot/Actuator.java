@@ -45,10 +45,7 @@ public class Actuator {
      * Indicates whether the actuator is currently working.
      */
     public boolean isWorking;
-    
-    //Repository repo;
-
-    //int latency;
+     
 
     /**
      * Constructs a new Actuator with the specified name, topic, and delay.

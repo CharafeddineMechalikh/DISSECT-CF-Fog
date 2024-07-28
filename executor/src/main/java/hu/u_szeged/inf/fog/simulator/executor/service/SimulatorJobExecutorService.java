@@ -56,8 +56,7 @@ public class SimulatorJobExecutorService {
                 .findFirst();
     }
 
-    private void simulationHousekeeping(SimulatorJob simulatorjob) {
-        // TODO: other static fields?
+    private void simulationHousekeeping(SimulatorJob simulatorjob) { 
         Timed.resetTimed();
         Application.allApplications.clear();
         Device.allDevices.clear();
@@ -91,8 +90,7 @@ public class SimulatorJobExecutorService {
 
     private void saveSimulatorResults(@NonNull SimulatorJob simulatorJob, long startTime) {
         try {
-            // TODO: later we should delete the locally stored files which were already uploaded to the database?
-            ScenarioBase.calculateIoTCost();
+             ScenarioBase.calculateIoTCost();
             var result = ScenarioBase.logBatchProcessing(System.nanoTime() - startTime);
             var resultFiles = new HashMap<ResultFileType, File>();
             var timeline = TimelineVisualiser.generateTimeline(SimulatorJobFileUtil.WORKING_DIR_BASE_PATH);

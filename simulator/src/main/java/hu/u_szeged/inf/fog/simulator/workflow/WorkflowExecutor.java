@@ -252,8 +252,7 @@ public class WorkflowExecutor {
                         .get(PowerTransitionGenerator.PowerStateKind.storage);
                 final Map<String, PowerState> nwTransitions = transitions
                         .get(PowerTransitionGenerator.PowerStateKind.network);
-
-                // TODO: refactor!
+ 
                 Repository repo = new Repository(1024, "repo" + workflowJob.id, 1024, 1024, 1024, latencyMap,
                         stTransitions, nwTransitions);
                 try {

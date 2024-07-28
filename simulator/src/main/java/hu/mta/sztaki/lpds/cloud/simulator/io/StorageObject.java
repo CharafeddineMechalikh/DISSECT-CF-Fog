@@ -35,9 +35,7 @@ import hu.mta.sztaki.lpds.cloud.simulator.util.SeedSyncer;
  *         of Innsbruck (c) 2013" "Gabor Kecskemeti, Laboratory of Parallel and
  *         Distributed Systems, MTA SZTAKI (c) 2012"
  */
-public class StorageObject {
-	// TODO: think about if it would make things easier if we would refer here
-	// the repository where this storage object is stored.
+public class StorageObject { 
 
 	/**
 	 * the identifier of the storage object. This might not be unique

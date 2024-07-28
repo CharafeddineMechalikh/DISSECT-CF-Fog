@@ -397,12 +397,7 @@ public abstract class ResourceSpreader {
 	 *                               networking it could be bytes/tick)
 	 */
 	protected void setPerTickProcessingPower(double perTickProcessingPower) {
-		// if (isSubscribed()) {
-		// // TODO: this case might be interesting to support.
-		// throw new IllegalStateException(
-		// "It is not possible to change the processing power of a spreader
-		// while it is subscribed!");
-		// }
+		
 		this.perTickProcessingPower = perTickProcessingPower;
 		this.negligibleProcessing = this.perTickProcessingPower / 1000000000;
 	}

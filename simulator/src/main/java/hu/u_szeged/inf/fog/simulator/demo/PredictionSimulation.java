@@ -12,8 +12,7 @@ import hu.u_szeged.inf.fog.simulator.prediction.settings.SimulationSettings;
 public class PredictionSimulation {
     
     public static void main(String[] args) throws Exception {
-        /** run only with prediction **/
-        // runPredictionOnly();
+        /** run only with prediction **/ 
         /** run with prediction and UI **/
         runPredictionWithUI();
     }
@@ -32,12 +31,7 @@ public class PredictionSimulation {
                         0
                 ),
                 PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.ARIMA)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.HOLT_WINTERS)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.RANDOM_FOREST)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.LINEAR_REGRESSION)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.SVR)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.LSTM)
-                //PredictorSettings.getPredictorSettings(PredictorSettings.PredictorEnum.ONLY_SIMULATION)
+                
         ));
         predictionConfigurator.addLaunchers(
                 new PredictorLauncher()

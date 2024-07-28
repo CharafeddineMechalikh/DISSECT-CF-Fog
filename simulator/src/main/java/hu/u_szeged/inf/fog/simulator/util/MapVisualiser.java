@@ -102,9 +102,7 @@ public class MapVisualiser {
 
         String nodeInfoForMapScript = "";
         String latencyInfoForMapScript = "";
-
-        // HashMap<ComputingAppliance, ComputingAppliance> checkedAppliances 
-        //      = new HashMap<ComputingAppliance, ComputingAppliance>();
+ 
         ArrayList<Pair> checkedAppliances = new ArrayList<Pair>();
 
         for (ComputingAppliance ca : ComputingAppliance.getAllComputingAppliances()) {
@@ -174,8 +172,7 @@ public class MapVisualiser {
         if (System.getProperty("os.name").contains("Windows")) {
             ProcessBuilder pb = new ProcessBuilder("python", scriptPath + "map.py", nodeInfoForMapScript,
                     latencyInfoForMapScript, resultDirectory, Integer.toString(devices.size()));
-            // System.out.println(pb.command());
-
+         
             pb.redirectOutput(Redirect.INHERIT);
             pb.redirectError(Redirect.INHERIT);
             pb.start();

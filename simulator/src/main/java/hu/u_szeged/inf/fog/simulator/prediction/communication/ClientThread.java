@@ -72,8 +72,7 @@ public class ClientThread extends Thread {
             inMessage = new SocketMessage(data);
             PredictionLogger.info("socket-in", 
                     String.format("[%s]: %s", name == null ? "UNKNOWN" : name, inMessage.getEvent()));
-        } catch (Exception e) {
-            //e.printStackTrace();
+        } catch (Exception e) { 
         }
 
         return inMessage;

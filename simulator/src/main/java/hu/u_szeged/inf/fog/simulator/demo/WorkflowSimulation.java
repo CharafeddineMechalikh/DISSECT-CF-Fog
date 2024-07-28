@@ -25,18 +25,15 @@ public class WorkflowSimulation {
     public static void main(String[] args) throws Exception {
     	SimLogger.setLogging(1, true);
     	
-        HashMap<WorkflowComputingAppliance, Instance> workflowArchitecture = getWorkflowArchitecutre();
-        //ArrayList<Actuator> actuatorArchitecture = getActuatorArchitecture();
+        HashMap<WorkflowComputingAppliance, Instance> workflowArchitecture = getWorkflowArchitecutre(); 
 
         String workflowFile = ScenarioBase.resourcePath + "/WORKFLOW_examples/CyberShake_100.xml";
         workflowFile = ScientificWorkflowParser.parseToIotWorkflow(workflowFile);
-
-        //String workflowFile = ScenarioBase.resourcePath + "/WORKFLOW_examples/IoT_workflow.xml";
+ 
 
         WorkflowJobModel.loadWorkflowXml(workflowFile);
 
-        new WorkflowExecutor(new MaxMinScheduler(workflowArchitecture));
-        //new WorkflowExecutor(new IotWorkflowScheduler(workflowArchitecture, actuatorArchitecture, 1000));
+        new WorkflowExecutor(new MaxMinScheduler(workflowArchitecture)); 
 
         Timed.simulateUntilLastEvent();
         ScenarioBase.logStreamProcessing();

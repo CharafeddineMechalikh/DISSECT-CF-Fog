@@ -65,11 +65,7 @@ public class SmartDevice extends Device {
         this.latency = latency;
         this.iterationCounter = 0;
         this.startMeter();
-        /*
-        if (Device.longestRunningDevice < this.stopTime) {
-            Device.longestRunningDevice = this.stopTime;
-        }
-        */
+        
     }
     
     /**

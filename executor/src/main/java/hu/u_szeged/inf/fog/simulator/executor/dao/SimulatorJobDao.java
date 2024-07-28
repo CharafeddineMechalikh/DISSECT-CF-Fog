@@ -53,8 +53,7 @@ public class SimulatorJobDao {
 
         mongoTemplate.updateFirst(query, update, SimulatorJobDataObject.class);
     }
-
-    // TODO: refactor this method!
+ 
     public void saveSimulatorJobError(@NonNull String id, long numberOfCalculation) {
         var query = Query.query(Criteria.where(ID_FIELD_NAME).is(id));
         var update = Update.update(JOB_STATUS_FIELD_NAME, SimulatorJobStatus.FAILED);

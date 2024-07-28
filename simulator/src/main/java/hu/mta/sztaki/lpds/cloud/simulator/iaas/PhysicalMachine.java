@@ -1465,7 +1465,7 @@ public class PhysicalMachine extends MaxMinProvider implements VMManager<Physica
 	 */
 	@Override
 	public void subscribeToCapacityChanges(final CapacityChangeEvent<ResourceConstraints> e) {
-		// FIXME: not important yet
+		
 	}
 
 	/**
@@ -1473,7 +1473,7 @@ public class PhysicalMachine extends MaxMinProvider implements VMManager<Physica
 	 */
 	@Override
 	public void unsubscribeFromCapacityChanges(final CapacityChangeEvent<ResourceConstraints> e) {
-		// FIXME: not important yet
+		
 	}
 
 	/**

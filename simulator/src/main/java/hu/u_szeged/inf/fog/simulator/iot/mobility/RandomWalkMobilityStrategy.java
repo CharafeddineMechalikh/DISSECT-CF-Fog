@@ -48,8 +48,7 @@ public class RandomWalkMobilityStrategy extends MobilityStrategy {
      * @return the new geographical location of the device after moving
      */
     @Override
-    public GeoLocation move(Device device) {
-        // TODO: the method can be simplified!
+    public GeoLocation move(Device device) { 
         double direction = Math.toRadians((SeedSyncer.centralRnd.nextDouble() * 360));
 
         double lat1 = Math.toRadians(currentPosition.latitude);

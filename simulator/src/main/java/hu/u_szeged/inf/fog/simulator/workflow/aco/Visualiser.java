@@ -20,10 +20,7 @@ public class Visualiser {
         return false;
 
     }
-
-    //public static void mapGenerator(String scriptPath, String resultDirectory, Device... devices) throws IOException {
-    //    Visualiser.generateMap(scriptPath, resultDirectory, new ArrayList<>(Arrays.asList(devices)));
-    //}
+ 
 
     public static void mapGenerator(String scriptPath, String resultDirectory, List<Ant> ants) throws IOException {
         Visualiser.generateMap(scriptPath, resultDirectory, ants);

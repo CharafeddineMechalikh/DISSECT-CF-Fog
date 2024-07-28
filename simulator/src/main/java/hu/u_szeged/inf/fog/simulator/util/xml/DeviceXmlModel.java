@@ -219,7 +219,7 @@ public class DeviceXmlModel {
     
     private static DeviceStrategy findDeviceStrategy(String strategy, String code, boolean isCustom) {
         if (!isCustom) {
-            code = strategy; // TODO: check it
+            code = strategy;  
         }
 
         if (strategy.equals("CostAwareDeviceStrategy")) {

@@ -6,8 +6,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Helper class for logging prediction-related events.
  */
-public class PredictionLogger {
-    // TODO: replace to the simulator's logger
+public class PredictionLogger { 
     static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
     public static void info(String event, String text) {

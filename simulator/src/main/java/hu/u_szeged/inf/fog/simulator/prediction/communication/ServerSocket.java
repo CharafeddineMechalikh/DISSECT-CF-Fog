@@ -48,16 +48,7 @@ public class ServerSocket {
             System.exit(1);
         }
 
-        /*while (true) {
-            int c = 0;
-            for (ClientThread clientThread: clientThreads) {
-                c += clientThread.getSocketName() == null ? 0 : 1;
-            }
-
-            if (c == clientThreads.size()) {
-                break;
-            }
-        }*/
+        
 
         if (Launcher.hasApplication(ElectronLauncher.class.getSimpleName())) {
             try {

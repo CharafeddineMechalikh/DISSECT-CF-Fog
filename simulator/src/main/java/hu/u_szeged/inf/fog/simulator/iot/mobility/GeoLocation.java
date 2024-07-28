@@ -67,8 +67,7 @@ public class GeoLocation {
         double brng = Math.atan2(y, x);
 
         brng = Math.toDegrees(brng);
-        brng = (brng + 360) % 360;
-        //brng = 359 - brng; count degrees counter-clockwise - remove to make clockwise // TODO: Check it
+        brng = (brng + 360) % 360; 
 
         return brng;
     }

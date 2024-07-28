@@ -50,8 +50,7 @@ public abstract class WorkflowScheduler {
                                     workflowJob.fileRecievedByAssigning += so.size;
                                     if (workflowJob.fileRecievedByAssigning == workflowJob.fileRecieved) {
                                         workflowJob.ca = (WorkflowComputingAppliance) futureAppliance;
-                                        workflowJob.state = WorkflowJob.State.SUBMITTED;
-                                        // schedule(workflowJob); ?
+                                        workflowJob.state = WorkflowJob.State.SUBMITTED; 
                                         if (WorkflowExecutor.jobReassigns.get(workflowJob) == null) {
                                             WorkflowExecutor.jobReassigns.put(workflowJob, 1);
                                         } else {

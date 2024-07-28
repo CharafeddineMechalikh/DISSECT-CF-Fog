@@ -25,15 +25,6 @@ public class InstancesXmlModel {
     public void setInstances(ArrayList<InstanceXmlModel> instances) {
         this.instanceList = instances;
     }
-    
-    /*
-    public void add(InstanceModel instances) {
-        if (this.instanceList == null) {
-            this.instanceList = new ArrayList<InstanceModel>();
-        }
-        this.instanceList.add(instances);
-    }
-    */
 
     @Override
     public String toString() {

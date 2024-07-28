@@ -54,8 +54,7 @@ public class PliantApplicationStrategy extends ApplicationStrategy {
      * @param availableCompAppliances the list of available computing appliances
      * @return the chosen application based on the decision-making process
      */
-    private Application decisionMaker(ArrayList<ComputingAppliance> availableCompAppliances) {
-        // TODO: reduce complexity of the method
+    private Application decisionMaker(ArrayList<ComputingAppliance> availableCompAppliances) { 
         ComputingAppliance currentCa = this.application.computingAppliance;
         List<Prediction> predictions = new ArrayList<>();
         if (PredictionConfigurator.PREDICTION_ENABLED) {
@@ -145,17 +144,10 @@ public class PliantApplicationStrategy extends ApplicationStrategy {
             ComputingAppliance ca = availableCompAppliances.get(i);
             Sigmoid sig = new Sigmoid(Double.valueOf(-1.0 / 8.0),
                     Double.valueOf((maxLoadOfResource + minLoadOfResource) / 2.0));
-            loadOfResource.add(sig.getAt(ca.getLoadOfResource()));
-            /*
-             * System.out.println(ca.name + " Load Resource " + ca.getLoadOfResource() +
-             * " Price: " + ca.applications.get(0).instance.pricePerTick * 100000000 +
-             * " UnprocessedData: " + (ca.applications.get(0).receivedData -
-             * ca.applications.get(0).receivedData) / ca.applications.get(0).tasksize);
-             */
+            loadOfResource.add(sig.getAt(ca.getLoadOfResource())); 
             sig = new Sigmoid(Double.valueOf(4.0 / 1.0), Double.valueOf((minPrice)));
             price.add(sig.getAt(ca.applications.get(0).instance.pricePerTick * 100000000));
-
-            // System.out.println(ca.applications.get(0).instance.pricePerTick * 100000000);
+ 
 
             sig = new Sigmoid(Double.valueOf(-1.0 / 8.0), Double.valueOf((Math.abs((maxLatency - minLatency)) / 2.0)));
 
@@ -184,10 +176,8 @@ public class PliantApplicationStrategy extends ApplicationStrategy {
                         tmpavg /= num;
                         double actUd = (double) ((ca.applications.get(0).receivedData 
                                 - ca.applications.get(0).processedData)
-                                / ca.applications.get(0).tasksize);
-                        //pred_unprocesseddata.add(p.getData().get(0));
-                        sig = new Sigmoid(Double.valueOf(-1.0 / 32768.0), Double.valueOf(actUd));
-                        //unprocesseddata.add(sig.getAt((double) tmpavg));
+                                / ca.applications.get(0).tasksize); 
+                        sig = new Sigmoid(Double.valueOf(-1.0 / 32768.0), Double.valueOf(actUd)); 
                         predUnprocesseddata.put(name[0], sig.getAt((double) tmpavg));
 
                     }
@@ -207,8 +197,7 @@ public class PliantApplicationStrategy extends ApplicationStrategy {
                 temp.add(predUnprocesseddata.get(availableCompAppliances.get(i).name));
             }
             score.add((int) (FuzzyIndicators.getAggregation(temp) * 100));
-        }
-        // System.out.println("Pontozás: " + score);
+        } 
 
         Vector<Double> temp = new Vector<Double>();
 
@@ -227,15 +216,7 @@ public class PliantApplicationStrategy extends ApplicationStrategy {
                         / currentCa.applications.get(0).tasksize)));
         Integer currentCaScore;
         currentCaScore = (int) (FuzzyIndicators.getAggregation(temp) * 100);
-        /*
-         * System.out.println(currentCA.name + " Load Resource " +
-         * currentCA.getLoadOfResource() + " Price: " +
-         * currentCA.applications.get(0).instance.pricePerTick * 100000000 +
-         * " UnprocessedData: " + (currentCA.applications.get(0).receivedData -
-         * currentCA.applications.get(0).processedData) /
-         * currentCA.applications.get(0).tasksize); System.out.println("Score " +
-         * currentCAscore);
-         */
+        
         Vector<Integer> finaldecision = new Vector<Integer>();
         for (int i = 0; i < availableCompAppliances.size(); ++i) {
             finaldecision.add(i);

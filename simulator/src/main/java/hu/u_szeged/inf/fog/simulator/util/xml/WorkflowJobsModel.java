@@ -44,7 +44,7 @@ public class WorkflowJobsModel {
 
     @Override
     public String toString() {
-        StringBuffer str = new StringBuffer(); // TODO: replace to StringBuilder?
+        StringBuffer str = new StringBuffer(); 
         for (WorkflowJobModel job : this.jobList) {
             str.append(job.toString());
             str.append("\n");

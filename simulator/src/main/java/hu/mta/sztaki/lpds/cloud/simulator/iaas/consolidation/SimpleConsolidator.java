@@ -103,8 +103,7 @@ public class SimpleConsolidator extends Consolidator {
 						PhysicalMachine target = pmList[j];
 						ResourceAllocation alloc = null;
 						try {
-							// TODO: we do not keep the possibility of underprovisioning with strict
-							// allocation = true
+							
 							alloc = target.allocateResources(allocation, true, PhysicalMachine.migrationAllocLen);
 							if (alloc != null) {
 								// A move is possible, migration is requested

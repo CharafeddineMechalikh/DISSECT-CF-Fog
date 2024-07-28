@@ -116,8 +116,7 @@ public class Predictor {
         }
             
         GeoLocation futureLocation = future(device, direction, speed);
-        double futureDistance = futureLocation.calculateDistance(device.application.computingAppliance.geoLocation);
-        //int futureLatency = device.latency + (int) (futureDistance / 1000);
+        double futureDistance = futureLocation.calculateDistance(device.application.computingAppliance.geoLocation); 
         return futureDistance > device.application.computingAppliance.range;
     }
 

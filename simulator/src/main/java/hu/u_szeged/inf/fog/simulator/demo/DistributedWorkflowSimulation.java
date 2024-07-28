@@ -20,10 +20,8 @@ public class DistributedWorkflowSimulation {
 
     public static void main(String[] args) throws Exception {
     	SimLogger.setLogging(1, true);
-    	
-        //String cloudfile = ScenarioBase.resourcePath+"LPDS_original.xml";
-        ArrayList<WorkflowComputingAppliance> centerNodes = new ArrayList<>();
-        //LinkedHashMap<WorkflowComputingAppliance, Instance> workflowArchitecture = getWorkflowArchitecutre();
+    	 
+        ArrayList<WorkflowComputingAppliance> centerNodes = new ArrayList<>(); 
         LinkedHashMap<WorkflowComputingAppliance, Instance> workflowArchitecture = getWorkflowArchitecutre(centerNodes);
 
 
@@ -34,9 +32,7 @@ public class DistributedWorkflowSimulation {
         ArrayList<LinkedHashMap<WorkflowComputingAppliance, Instance>> workflowArchitectures;
         ArrayList<DecentralizedWorkflowScheduler> workflowSchedulers = new ArrayList<>();
 
-        //ACO aco = new ACO(6, 20, 60, 0.2, 100, 0.3,20);
-        //workflowArchitectures = aco.runACO(workflowArchitecture, centerNodes);
-
+         
         Acoc acoc = new Acoc(0.2,100,0.2,20);
         workflowArchitectures = acoc.runAcoc(workflowArchitecture,actuatorArchitecture);
 
@@ -54,9 +50,7 @@ public class DistributedWorkflowSimulation {
 
         Timed.simulateUntilLastEvent();
         ScenarioBase.logStreamProcessing(workflowSchedulers);
-        //WorkflowGraphVisualiser.generateDAG(ScenarioBase.scriptPath, ScenarioBase.resultDirectory, workflowFile);
-        //TimelineVisualiser.generateTimeline(ScenarioBase.resultDirectory);
-    }
+          }
 
     private static ArrayList<Actuator> getActuatorArchitecture() {
         ArrayList<Actuator> actuatorArchitecture = new ArrayList<Actuator>();
@@ -90,11 +84,8 @@ public class DistributedWorkflowSimulation {
         WorkflowComputingAppliance fog20 = new WorkflowComputingAppliance(cloudfile, "fog20", new GeoLocation(50, 50), 1000);
 
         VirtualAppliance va = new VirtualAppliance("va", 100, 0, false, 1073741824L);
-
-        //AlterableResourceConstraints arc1 = new AlterableResourceConstraints(2, 0.001, 4294967296L);
-        AlterableResourceConstraints arc2 = new AlterableResourceConstraints(4, 0.001, 4294967296L);
-
-        //Instance instance1 = new Instance("instance1", va, arc1, 0.051 / 60 / 60 / 1000, 1);
+ 
+        AlterableResourceConstraints arc2 = new AlterableResourceConstraints(4, 0.001, 4294967296L 
         Instance instance2 = new Instance("instance2", va, arc2, 0.102 / 60 / 60 / 1000, 1);
 
         LinkedHashMap<WorkflowComputingAppliance, Instance> workflowArchitecture = new LinkedHashMap<WorkflowComputingAppliance, Instance>();

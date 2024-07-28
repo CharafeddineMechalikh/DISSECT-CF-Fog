@@ -593,8 +593,7 @@ public class VirtualMachine extends MaxMinConsumer {
 		case SHUTDOWN:
 			// Shutdown has already done the transfer, we just need to make sure
 			// the VM will get through its boot procedure
-			if (allocation.getHost().localDisk != vatarget) {
-				// TODO: maybe we can switch back to destroyed
+			if (allocation.getHost().localDisk != vatarget) { 
 				throw new VMManagementException("VM was not prepared for this PM");
 			}
 			setResourceAllocation(allocation);
@@ -885,8 +884,7 @@ public class VirtualMachine extends MaxMinConsumer {
 					protected void eventAction() {
 						try {
 							destroy(killTasks);
-						} catch (VMManagementException e) {
-							// TODO: allow more graceful exception handling
+						} catch (VMManagementException e) { 
 							throw new RuntimeException(e);
 						}
 					}

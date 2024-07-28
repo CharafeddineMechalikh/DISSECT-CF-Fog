@@ -170,16 +170,7 @@ public class DecentralizedWorkflowExecutor {
         }
     }
 
-    /*
-    private static WorkflowJob findWorkflowJob(String id) {
-        for (WorkflowJob workflowJob : WorkflowJob.workflowJobs) {
-            if (workflowJob.id.equals(id)) {
-                return workflowJob;
-            }
-        }
-        return null;
-    }
-    */
+   
     
     private static WorkflowJob findWorkflowJob(String id, DecentralizedWorkflowScheduler workflowScheduler) {
         for (WorkflowJob workflowJob : workflowScheduler.workflowJobs) {
@@ -204,8 +195,7 @@ public class DecentralizedWorkflowExecutor {
     }
 
     private boolean checkComputingAppliances() {
-        boolean ready = true;
-        // boolean one = true;
+        boolean ready = true; 
         for (DecentralizedWorkflowScheduler workflowScheduler : workflowSchedulers) {
             int vmCount = 0;
             for (WorkflowComputingAppliance ca : workflowScheduler.workflowArchitecture.keySet()) {
@@ -294,8 +284,7 @@ public class DecentralizedWorkflowExecutor {
                             .get(PowerTransitionGenerator.PowerStateKind.storage);
                     final Map<String, PowerState> nwTransitions = transitions
                             .get(PowerTransitionGenerator.PowerStateKind.network);
-
-                    // TODO: refactor!
+ 
                     Repository repo = new Repository(1024, "repo" + workflowJob.id, 1024, 1024, 1024, latencyMap,
                             stTransitions, nwTransitions);
                     try {

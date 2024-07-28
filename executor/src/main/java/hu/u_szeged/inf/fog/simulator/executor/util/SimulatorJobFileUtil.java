@@ -11,8 +11,7 @@ import org.springframework.core.io.InputStreamResource;
 
 @UtilityClass
 public class SimulatorJobFileUtil {
-
-    //public static final String WORKING_DIR = "simulator-jobs";
+ 
     private static final String SEPARATOR = File.separator;
     public static final String WORKING_DIR_BASE_PATH = ScenarioBase.resultDirectory;
 

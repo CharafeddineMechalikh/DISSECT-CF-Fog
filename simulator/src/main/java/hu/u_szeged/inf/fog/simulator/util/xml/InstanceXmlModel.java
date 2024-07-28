@@ -82,8 +82,7 @@ public class InstanceXmlModel {
         File file = new File(datafile);
         JAXBContext jaxbContext = JAXBContext.newInstance(InstancesXmlModel.class);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-        InstancesXmlModel instances = (InstancesXmlModel) jaxbUnmarshaller.unmarshal(file);
-        //System.out.println(instances);
+        InstancesXmlModel instances = (InstancesXmlModel) jaxbUnmarshaller.unmarshal(file); 
         for (InstanceXmlModel im : instances.instanceList) {
             new Instance(im.name, new VirtualAppliance(im.name, im.startupProcess, 0, false, im.reqDisk),
                     new AlterableResourceConstraints(im.cpuCores, im.coreProcessingPower, im.ram), im.pricePerTick);

@@ -21,8 +21,7 @@ public class WorkflowGraphVisualiser {
 
         if (System.getProperty("os.name").contains("Windows")) {
             ProcessBuilder pb = new ProcessBuilder("python", scriptpath + "DAG.py", ioTworkflowFile, resultDirectory);
-            // System.out.println(pb.command());
-
+          
             pb.redirectOutput(Redirect.INHERIT);
             pb.redirectError(Redirect.INHERIT);
             try {

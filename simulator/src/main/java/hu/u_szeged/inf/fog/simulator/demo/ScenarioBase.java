@@ -117,14 +117,7 @@ public class ScenarioBase {
             totalMessageCount += device.messageCount;
             totalDeviceEnergyConsumption += device.energyConsumption;
         }
-        // SimLogger.logInfo("Movement pred. success/all: " + (double)
-        // EdgeDevice.success/EdgeDevice.all + " (" + EdgeDevice.success + "/" +
-        // EdgeDevice.all + ")" );
-        // SimLogger.logInfo(EdgeDevice.vmReq + " " + EdgeDevice.vmStart + " " +
-        // EdgeDevice.vmShutdown);
-
-        // TODO: in case of EdgeDevice, timeout can be negative, it must be fixed and
-        // calculated correctly!
+        
         SimLogger.logRes("Timeout (minutes): "
                 + TimeUnit.MINUTES.convert(Application.lastAction - Device.lastAction, TimeUnit.MILLISECONDS));
         SimLogger.logRes("Simulation length (minutes): "

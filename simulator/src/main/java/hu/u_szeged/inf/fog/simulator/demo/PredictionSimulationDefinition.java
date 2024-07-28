@@ -131,8 +131,7 @@ public class PredictionSimulationDefinition implements PredictionConfigurator.Si
 
         ScenarioBase.calculateIoTCost();
         ScenarioBase.logBatchProcessing(stoptime - starttime);
-        TimelineVisualiser.generateTimeline(ScenarioBase.resultDirectory);
-        // MapVisualiser.mapGenerator(ScenarioBase.scriptPath, ScenarioBase.resultDirectory, Device.allDevices);
+        TimelineVisualiser.generateTimeline(ScenarioBase.resultDirectory); 
     }
 
     private static ApplicationStrategy generateAppStrategy(String strategy, double activationRatio, double transferDivider) {
@@ -150,9 +149,7 @@ public class PredictionSimulationDefinition implements PredictionConfigurator.Si
         return null;
     }
     
-    private static double[] generatePosition() {
-        // double maxLatitude = 48.3; diff: 2.5
-        // double maxLongitude = 22.3; diff: 5.9
+    private static double[] generatePosition() { 
         double minLatitude = 45.8;
         double minLongitude = 16.4;
 

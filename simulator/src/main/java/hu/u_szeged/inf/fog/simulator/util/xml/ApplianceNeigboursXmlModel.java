@@ -18,7 +18,7 @@ public class ApplianceNeigboursXmlModel {
 
     public String name;
     public int latency;
-    public String parent; // TODO: bool?
+    public String parent;  
 
     @XmlAttribute(name = "name")
     public void setName(String name) {
